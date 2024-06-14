@@ -1,0 +1,7 @@
+<ion-card (click)="toggleInfo()">
+  <img [src]="image" />
+  <ion-card-content *ngIf="showInfo">
+    <ion-card-title class="info-titu">{{ title }}</ion-card-title>
+    <p class="info-texto">{{ text }}</p>
+  </ion-card-content>
+</ion-card>

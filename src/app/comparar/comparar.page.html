@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar style="--background: #ff0000;">
+    <ion-title class="title">Comparar Pokémons</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu" ></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">ID do Pokémon 1</ion-label>
+    <ion-input type="number" [(ngModel)]="pokemon1Id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">ID do Pokémon 2</ion-label>
+    <ion-input type="number" [(ngModel)]="pokemon2Id"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="compare()">Comparar</ion-button>
+
+  <div *ngIf ="pokemon1 && pokemon2">
+    <h2 style="text-align: center">{{pokemon1.name}} vs {{pokemon2.name}}</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img [src]="pokemon1.sprites.front_default" alt="{{pokemon1.name}}">
+          <p>Altura: {{pokemon1.height}}</p>
+          <p>Peso: {{pokemon1.weight}}</p>
+          <p>Experiência Base: {{pokemon1.base_experience}}</p>
+          <p *ngFor="let stat of pokemon1.stats">
+            {{stat.stat.name}}: {{stat.base_stat}}
+          </p>
+        </ion-col>
+        <ion-col>
+          <img [src]="pokemon2.sprites.front_default" alt="{{pokemon2.name}}">
+          <p>Altura: {{pokemon2.height}}</p>
+          <p>Peso: {{pokemon2.weight}}</p>
+          <p>Experiência Base: {{pokemon2.base_experience}}</p>
+          <p *ngFor="let stat of pokemon2.stats">
+            {{stat.stat.name}}: {{stat.base_stat}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

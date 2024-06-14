@@ -1,0 +1,28 @@
+<ion-header></ion-header>
+
+<ion-content style="--background: #ffffff;">
+  <div class="container">
+    <img src="assets/imagens/pokedex.png" alt="Descrição da imagem">
+    <h2>Login</h2>
+    <div class="form-group">
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]='usuario'></ion-input>
+      </ion-item>
+      <br>
+
+      <ion-item>
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]='senha'></ion-input>
+      </ion-item>
+
+      <ion-button id="alerta" (click)='login()' expand='block'>Login</ion-button>
+     
+      <br>
+
+      <h5 (click)='signup()'>Não tem cadastro? <ion-text color='primary'>Cadastre-se Aqui!</ion-text>
+      </h5>
+    </div>
+  </div>
+
+</ion-content>
